@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "NODE_TLS_REJECT_UNAUTHORIZED='0' SWCRC=true node -r @swc-node/register src/index.ts"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "text-summarise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon",
+    "build": "swc src -d dist --source-maps --copy-files --config-file .swcrc && swc instrument.js -o dist/instrument.js --config-file .swcrc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/core": "^0.3.78",
+    "@langchain/google-genai": "^0.2.18",
+    "@langchain/groq": "^0.2.4",
+    "dotenv": "^17.2.3",
+    "langchain": "^0.3.35"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.11.1",
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.5",
+    "@types/node": "^24.6.0",
+    "nodemon": "^3.1.10"
+  }
+}
