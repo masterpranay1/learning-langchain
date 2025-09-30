@@ -2,7 +2,7 @@ import { ChatPromptTemplate } from "@langchain/core/prompts";
 import type { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import type { ChatGroq } from "@langchain/groq";
 
-const systemTemplate = "Summarize the key points from the following text in 100 words:";
+const systemTemplate = `Summarize the key points from the following text in 100 words.`;
 
 const promptTemplate = ChatPromptTemplate.fromMessages([
   ["system", systemTemplate],
@@ -18,7 +18,7 @@ export async function promptStream(model: ChatGoogleGenerativeAI | ChatGroq, mes
   const chunks = [];
   for await (const chunk of stream) {
     chunks.push(chunk);
-    console.log(chunk.content);
+    process.stdout.write(String(chunk.content));
   }
   console.timeEnd("model-invocation");
   console.log("\n");

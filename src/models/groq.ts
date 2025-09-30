@@ -6,7 +6,8 @@ dotenv.config({ path: path.join(__dirname, "../../.env") });
 import { ChatGroq } from "@langchain/groq"
 
 const groqModel = new ChatGroq({
-  model: "openai/gpt-oss-20b",
+  // model: "openai/gpt-oss-20b",
+  model: "deepseek-r1-distill-llama-70b",
   temperature: 0,
   apiKey: process.env.GROQ_API_KEY,
 });
