@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED='0' SWCRC=true node -r @swc-node/register src/index.ts",
     "build": "swc src -d dist --source-maps --copy-files --config-file .swcrc && swc instrument.js -o dist/instrument.js --config-file .swcrc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
